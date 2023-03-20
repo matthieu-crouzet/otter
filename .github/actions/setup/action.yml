@@ -6,6 +6,10 @@ inputs:
     description: 'Enable Cache'
     required: false
     default: 'false'
+  enable-e2e-cache:
+    description: 'Enable Cache for e2e'
+    required: false
+    default: 'false'
   cache-build-identifier:
     description: 'Custom identifier to build cache key'
     required: false
@@ -48,6 +52,15 @@ runs:
           ${{ runner.os }}-build-${{ env.hash }}
           ${{ runner.os }}-build
           ${{ runner.os }}
+    - name: Cache e2e
+      if: inputs.enable-e2e-cache == 'true'
+      uses: actions/cache@v3
+      with:
+        path: |
+          .cache/e2e
+        key: ${{ runner.os }}-e2e-${{ hashFiles('yarn.lock') }}
+        restore-keys: |
+          ${{ runner.os }}-e2e
     - name: Install
       shell: bash
       run: yarn install
