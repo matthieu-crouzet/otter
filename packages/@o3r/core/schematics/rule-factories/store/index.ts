@@ -11,7 +11,6 @@ const packageJsonPath = path.resolve(__dirname, '..', '..', '..', 'package.json'
 const ngrxEffectsDep = '@ngrx/effects';
 const ngrxEntityDep = '@ngrx/entity';
 const ngrxStoreDep = '@ngrx/store';
-const ngrxStoreLocalstorageDep = 'ngrx-store-localstorage';
 const ngrxRouterStore = '@ngrx/router-store';
 
 /**
@@ -27,13 +26,13 @@ export function updateStore(options: { projectName: string | null }, _rootPath: 
    * Changed package.json start script to run localization generation
    *
    * @param tree
-   * @param _context
+   * @param context
    */
   const updatePackageJson: Rule = (tree: Tree, context: SchematicContext) => {
     const workspaceProject = getProjectFromTree(tree, options.projectName || undefined);
     const type: NodeDependencyType = workspaceProject.projectType === 'application' ? NodeDependencyType.Default : NodeDependencyType.Peer;
 
-    let dependenciesList = [ngrxEffectsDep, ngrxEntityDep, ngrxStoreDep, ngrxStoreLocalstorageDep];
+    let dependenciesList = [ngrxEffectsDep, ngrxEntityDep, ngrxStoreDep];
     dependenciesList = isApplicationThatUsesRouterModule(tree) ? [...dependenciesList, ngrxRouterStore] : dependenciesList;
     try {
       const dependencies: NodeDependency[] = getNodeDependencyList(
@@ -136,7 +135,6 @@ export function updateStore(options: { projectName: string | null }, _rootPath: 
     insertImportToModuleFile('Action', '@ngrx/store');
     insertImportToModuleFile('ActionReducer', '@ngrx/store');
     insertImportToModuleFile('Serializer', '@o3r/core');
-    insertImportToModuleFile('localStorageSync', 'ngrx-store-localstorage');
     insertImportToModuleFile('environment', '../environments/environment');
 
     if (isApplicationThatUsesRouterModule(tree)) {
