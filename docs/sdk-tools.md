@@ -1,3 +1,0 @@
-# Sdk Tools
-
-- [SDK_MODELS_HIERARCHY](./sdk-tools/SDK_MODELS_HIERARCHY.md)
