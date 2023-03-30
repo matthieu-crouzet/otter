@@ -1,4 +1,3 @@
-# Forms
+# Sdk Tools
 
-- [MOCK_FACTORY](./sdk-tools/MOCK_FACTORY.md)
-- [SDK_MODELS_HIERARCHY](./forms/SDK_MODELS_HIERARCHY.md)
+- [SDK_MODELS_HIERARCHY](./sdk-tools/SDK_MODELS_HIERARCHY.md)
