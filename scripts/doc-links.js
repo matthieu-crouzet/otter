@@ -1,6 +1,6 @@
 /* eslint-disable no-console */
-const fs = require('fs');
-const path = require('path');
+const fs = require('node:fs');
+const path = require('node:path');
 
 const rootGenerated = path.resolve(__dirname, '..', 'generated-doc');
 const additionalDocGenerated = path.resolve(__dirname, '..', 'generated-doc', 'additional-documentation');
