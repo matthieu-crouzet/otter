@@ -129,5 +129,11 @@
   "ng-update": {
     "migrations": "./dist/migration.json",
     "packageGroup": []
+  },
+  "exports": {
+    "./schematics": {
+      "default": "./schematics/index.js",
+      "types": "./schematics/index.d.ts"
+    }
   }
 }

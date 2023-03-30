@@ -2,6 +2,7 @@
 import { Rule, SchematicContext, Tree } from '@angular-devkit/schematics';
 import { getSourceFilesFromWorkspaceProjects } from '@o3r/schematics';
 import * as ts from 'typescript';
+import { sync as globbySync } from 'globby';
 import { mapImportV7toV8, renamedPackages } from './v7-to-v8-map-object';
 import { logging } from '@angular-devkit/core';
 import { findNodes } from '@schematics/angular/utility/ast-utils';
@@ -110,12 +111,20 @@ function updateImportsInFile(
 /**
  * Update imports from v7 to v8
  *
+ * @param workspaces
+ *
  */
-export function updateImports(): Rule {
+export function updateImports(workspaces?: string[]): Rule {
 
   return (tree: Tree, context: SchematicContext) => {
-    const files = getSourceFilesFromWorkspaceProjects(tree);
-
+    let files: string[] = [];
+    if (workspaces && workspaces.length > 0) {
+      workspaces.forEach((workspace) => {
+        files.push(...globbySync(`${workspace}/**/*.ts`));
+      });
+    } else {
+      files = getSourceFilesFromWorkspaceProjects(tree);
+    }
     // exact match on import path
     const importsRegexp = new RegExp(`^(${[...Object.keys(mapImportV7toV8)].join('|')})$`);
     // match the import path starting with the package to be renamed

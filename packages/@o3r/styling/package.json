@@ -19,6 +19,10 @@
   "exports": {
     ".": {
       "sass": "./_index.scss"
+    },
+    "./schematics": {
+      "default": "./schematics/index.js",
+      "types": "./schematics/index.d.ts"
     }
   },
   "peerDependencies": {
