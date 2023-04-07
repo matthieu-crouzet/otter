@@ -11,11 +11,8 @@ Usage of the tools is explained via the `--help` option :
 
 ```bash
 $ npx @ama-sdk/swagger-build --help
-
 # Usage: swagger-build [options] [(swagger-spec|api-configuration|npm-package|glob)...]
-
 # Merge swagger spec in inputs. The inputs can be `swagger file`, `api configuration file` or `npm package`
-
 # Options:
 #   -V, --version                                      output the version number
 #   --apis <path>                                      Path to the files containing a list of APIs to generate. Each APIs will be merged with the ones in argument.
@@ -49,7 +46,10 @@ The **Swagger Builder** supports three formats of Swagger specification as input
 The **Swagger Builder** tool will merge all the Swagger specifications entered as arguments (in any of the 3 formats chosen above) from the first entry to the last one as described in the [merging strategy](./merging-strategy.md).
 
 >**Information**: The input support *Glob patterns* to list several files
+<<<<<<< HEAD
 
+=======
+>>>>>>> f8567cf (feat: deploy documentation for the o3r part)
 ## Configuration
 
 The **Swagger Builder** supports two kinds of configuration:
@@ -61,7 +61,10 @@ The **Swagger Builder** supports a set of *configuration* to configure the mergi
 
 The configurations can be specified in a JSON file following a provided [Json Schema](./packages/@ama-sdk/swagger-builder/src/schemas/builder-configuration.schema.json) or via CLI options.
 > **Warning**: The CLI Options will **be overridden by** the configuration provided in the JSON file.
+<<<<<<< HEAD
 
+=======
+>>>>>>> f8567cf (feat: deploy documentation for the o3r part)
 ### List of available configurations
 
 | Configuration           | CLI Option                             | Description                                                                                                                                                                                                                                                                    | Default value |
