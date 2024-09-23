@@ -73,8 +73,9 @@ coverage
 # Optional npm cache directory
 .npm
 
-# Optional eslint cache
+# Optional eslint
 .eslintcache
+.eslint-config-inspector/
 
 # Optional REPL history
 .node_repl_history
