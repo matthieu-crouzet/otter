@@ -1,0 +1,44 @@
+name: Create branch e2e screenshots
+description: Create a branch with the update of the e2e screenshots
+inputs:
+  reportPath:
+    type: string
+    description: 'Path to the custom report'
+    required: true
+  screenshotsPattern:
+    type: string
+    description: 'Pattern to detect which screenshots should be committed'
+    required: true
+  branchSuffix:
+    type: string
+    description: 'Suffix for the branch that will be created'
+    required: false
+    default: '-update-e2e-screenshots'
+
+runs:
+  using: 'composite'
+  steps:
+    - name: Update e2e screenshots
+      uses: ./update-e2e-screenshots
+      id: update-e2e-screenshots
+      with:
+        reportPath: ${{ inputs.reportPath }}
+    - name: Create branch
+      if: steps.update-e2e-screenshots.outputs.screenshots != 0
+      uses: stefanzweifel/git-auto-commit-action@v5
+      with:
+        commit_message: Update e2e screenshots
+        branch: ${{ github.head_ref }}${{ inputs.branchSuffix }}
+        create_branch: true
+        file_pattern: ${{ inputs.screenshotsPattern }}
+    - name: Comment the PR
+      uses: actions/github-script@60a0d83039c74a4aee543508d2ffcb1c3799cdea # v7.0.1
+      with:
+        script: |
+          const [owner, repo] = '${{ github.repository }}'.split('/');
+          github.rest.issues.createComment({
+            issue_number: context.issue.number,
+            repo: repo,
+            owner: owner,
+            body: 'A [branch](https://github.com/${{ github.repository}}/tree/${{ github.head_ref }}${{ inputs.branchSuffix }}) with the ${{ steps.update-e2e-screenshots.outputs.screenshots }} updated screenshots has been created!'
+          });

@@ -27,12 +27,14 @@ jobs:
     runs-on: ubuntu-24.04
     env:
       NX_CLOUD_ACCESS_TOKEN: ${{ secrets.NX_CLOUD_ACCESS_TOKEN }}
+      UPDATE_E2E_SCREENSHOTS_BRANCH: ${{ github.head_ref }}-update-e2e-screenshots
     steps:
       - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
       - uses: ./tools/github-actions/download-build-output
       - uses: ./tools/github-actions/setup
       - run: yarn playwright install
       - name: Run e2e tests
+        id: e2e
         run: |
           npx --yes http-server apps/showcase/dist/browser -p 8080 -s &
           npx --yes wait-on $PLAYWRIGHT_TARGET_URL -t 5000
@@ -49,3 +51,11 @@ jobs:
           path: |
             apps/chrome-devtools/playwright-reports
             apps/showcase/playwright-reports
+
+      - name: Update e2e screenshots
+        if: ${{ steps.e2e.outcome }} == 'failure'
+        uses: ./tools/github-actions/create-branch-e2e-screenshots
+        id: update-e2e-screenshots
+        with:
+          reportPath: apps/showcase/playwright-reports/custom/report.json
+          screenshotsPattern: apps/showcase/e2e-playwright/sanity/screenshots/**

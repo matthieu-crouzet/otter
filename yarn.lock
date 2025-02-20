@@ -4614,6 +4614,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@eslint/js@npm:9.19.0":
+  version: 9.19.0
+  resolution: "@eslint/js@npm:9.19.0"
+  checksum: 10/d8133a83330676d5f0827713af2e9bbf35530631a93520fb59ead6b827a325c54fdd7ad99f2158f895fb393c47bbc55dfdaa945998a647f3b9230f1d5324a626
+  languageName: node
+  linkType: hard
+
 "@eslint/js@npm:9.20.0, @eslint/js@npm:~9.20.0":
   version: 9.20.0
   resolution: "@eslint/js@npm:9.20.0"
@@ -10499,7 +10506,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@o3r/testing@workspace:^, @o3r/testing@workspace:packages/@o3r/testing":
+"@o3r/testing@workspace:^, @o3r/testing@workspace:packages/@o3r/testing, @o3r/testing@workspace:~":
   version: 0.0.0-use.local
   resolution: "@o3r/testing@workspace:packages/@o3r/testing"
   dependencies:
@@ -12701,6 +12708,21 @@ __metadata:
   peerDependencies:
     eslint: ">=8.40.0"
   checksum: 10/30cb788ce1f35af853350a7ceddb4f810f456e254bb716b6f6ed6e1f6841855bd7b80ea21e8b37d86bac33c15700e52ed536faff2a44edb3c96391bdd120c5e8
+  languageName: node
+  linkType: hard
+
+"@stylistic/eslint-plugin@npm:~3.0.0":
+  version: 3.0.1
+  resolution: "@stylistic/eslint-plugin@npm:3.0.1"
+  dependencies:
+    "@typescript-eslint/utils": "npm:^8.13.0"
+    eslint-visitor-keys: "npm:^4.2.0"
+    espree: "npm:^10.3.0"
+    estraverse: "npm:^5.3.0"
+    picomatch: "npm:^4.0.2"
+  peerDependencies:
+    eslint: ">=8.40.0"
+  checksum: 10/83fca65d4f96077e32913cdd0251deb201f34c425d3d63587375bb6551881275aef76f56bb4ab7a67128d12528f308799799995f34eed24e8bac1d03bf54a587
   languageName: node
   linkType: hard
 
@@ -20683,7 +20705,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"eslint-plugin-import-newlines@npm:~1.4.0":
+"eslint-plugin-import-newlines@npm:^1.4.0, eslint-plugin-import-newlines@npm:~1.4.0":
   version: 1.4.0
   resolution: "eslint-plugin-import-newlines@npm:1.4.0"
   peerDependencies:
@@ -20694,7 +20716,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"eslint-plugin-import@npm:~2.31.0":
+"eslint-plugin-import@npm:^2.31.0, eslint-plugin-import@npm:~2.31.0":
   version: 2.31.0
   resolution: "eslint-plugin-import@npm:2.31.0"
   dependencies:
@@ -20778,7 +20800,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"eslint-plugin-unicorn@npm:~56.0.0":
+"eslint-plugin-unicorn@npm:^56.0.0, eslint-plugin-unicorn@npm:~56.0.0":
   version: 56.0.1
   resolution: "eslint-plugin-unicorn@npm:56.0.1"
   dependencies:
@@ -20804,7 +20826,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"eslint-plugin-unused-imports@npm:~4.1.4":
+"eslint-plugin-unused-imports@npm:^4.1.4, eslint-plugin-unused-imports@npm:~4.1.4":
   version: 4.1.4
   resolution: "eslint-plugin-unused-imports@npm:4.1.4"
   peerDependencies:
@@ -20848,6 +20870,55 @@ __metadata:
   version: 4.2.0
   resolution: "eslint-visitor-keys@npm:4.2.0"
   checksum: 10/9651b3356b01760e586b4c631c5268c0e1a85236e3292bf754f0472f465bf9a856c0ddc261fceace155334118c0151778effafbab981413dbf9288349343fa25
+  languageName: node
+  linkType: hard
+
+"eslint@npm:~9.19.0":
+  version: 9.19.0
+  resolution: "eslint@npm:9.19.0"
+  dependencies:
+    "@eslint-community/eslint-utils": "npm:^4.2.0"
+    "@eslint-community/regexpp": "npm:^4.12.1"
+    "@eslint/config-array": "npm:^0.19.0"
+    "@eslint/core": "npm:^0.10.0"
+    "@eslint/eslintrc": "npm:^3.2.0"
+    "@eslint/js": "npm:9.19.0"
+    "@eslint/plugin-kit": "npm:^0.2.5"
+    "@humanfs/node": "npm:^0.16.6"
+    "@humanwhocodes/module-importer": "npm:^1.0.1"
+    "@humanwhocodes/retry": "npm:^0.4.1"
+    "@types/estree": "npm:^1.0.6"
+    "@types/json-schema": "npm:^7.0.15"
+    ajv: "npm:^6.12.4"
+    chalk: "npm:^4.0.0"
+    cross-spawn: "npm:^7.0.6"
+    debug: "npm:^4.3.2"
+    escape-string-regexp: "npm:^4.0.0"
+    eslint-scope: "npm:^8.2.0"
+    eslint-visitor-keys: "npm:^4.2.0"
+    espree: "npm:^10.3.0"
+    esquery: "npm:^1.5.0"
+    esutils: "npm:^2.0.2"
+    fast-deep-equal: "npm:^3.1.3"
+    file-entry-cache: "npm:^8.0.0"
+    find-up: "npm:^5.0.0"
+    glob-parent: "npm:^6.0.2"
+    ignore: "npm:^5.2.0"
+    imurmurhash: "npm:^0.1.4"
+    is-glob: "npm:^4.0.0"
+    json-stable-stringify-without-jsonify: "npm:^1.0.1"
+    lodash.merge: "npm:^4.6.2"
+    minimatch: "npm:^3.1.2"
+    natural-compare: "npm:^1.4.0"
+    optionator: "npm:^0.9.3"
+  peerDependencies:
+    jiti: "*"
+  peerDependenciesMeta:
+    jiti:
+      optional: true
+  bin:
+    eslint: bin/eslint.js
+  checksum: 10/850d19fd6a34702d1e3d9bdad6aef84a20a5c2de006a8fa6380843384b13944b180232ddd74b8725ffcdf8f296399037f0e8eb4783d5f7393f13c059112b843d
   languageName: node
   linkType: hard
 
@@ -34428,6 +34499,37 @@ __metadata:
   checksum: 10/7685c5b0f561995c1020b8487df62a359de7edceee8fc573e3c4f45a4a967f83fa645f7b10b3ac0f98db8d60a51095c2f5671fb48bb5b281c69e958b7fb30c94
   languageName: node
   linkType: hard
+
+"update-e2e-screenshots-gh-action@workspace:tools/github-actions/update-e2e-screenshots":
+  version: 0.0.0-use.local
+  resolution: "update-e2e-screenshots-gh-action@workspace:tools/github-actions/update-e2e-screenshots"
+  dependencies:
+    "@actions/core": "npm:^1.10.0"
+    "@eslint-community/eslint-plugin-eslint-comments": "npm:^4.4.0"
+    "@nx/eslint-plugin": "npm:~20.4.0"
+    "@o3r/eslint-config": "workspace:~"
+    "@o3r/eslint-plugin": "workspace:~"
+    "@o3r/testing": "workspace:~"
+    "@stylistic/eslint-plugin": "npm:~3.0.0"
+    "@types/node": "npm:^20.0.0"
+    "@typescript-eslint/parser": "npm:~8.24.0"
+    "@vercel/ncc": "npm:~0.38.0"
+    angular-eslint: "npm:~19.1.0"
+    eslint: "npm:~9.19.0"
+    eslint-plugin-import: "npm:^2.31.0"
+    eslint-plugin-import-newlines: "npm:^1.4.0"
+    eslint-plugin-jest: "npm:~28.11.0"
+    eslint-plugin-jsdoc: "npm:~50.6.0"
+    eslint-plugin-prefer-arrow: "npm:~1.2.3"
+    eslint-plugin-unicorn: "npm:^56.0.0"
+    eslint-plugin-unused-imports: "npm:^4.1.4"
+    globals: "npm:^15.9.0"
+    jsonc-eslint-parser: "npm:~2.4.0"
+    tslib: "npm:^2.6.2"
+    typescript: "npm:~5.7.3"
+    typescript-eslint: "npm:~8.24.0"
+  languageName: unknown
+  linkType: soft
 
 "uri-js@npm:^4.2.2":
   version: 4.4.1
