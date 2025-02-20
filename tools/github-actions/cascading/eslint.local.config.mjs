@@ -28,7 +28,7 @@ export default [
     }
   },
   {
-    name: '@o3r/audit-gh-action/ignores',
+    name: '@o3r/cascading-gh-action/ignores',
     ignores: [
       '**/packaged-action/**'
     ]
